@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <b-navbar toggleable="lg" type="dark" variant="info">
+      <b-navbar-nav>
+        <b-nav-item to="/">Главная страница</b-nav-item>
+        <b-nav-item to="/countDots">Игра "Посчитай точки"</b-nav-item>
+      </b-navbar-nav>
+    </b-navbar>
+    <router-view />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 @Component({
   components: {
-    HelloWorld,
   },
 })
 export default class App extends Vue {}
@@ -24,6 +29,5 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
