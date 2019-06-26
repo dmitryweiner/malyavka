@@ -1,31 +1,46 @@
 import Vue from 'vue';
-import Vuex, { ActionContext } from 'vuex';
+import Vuex, {ActionContext} from 'vuex';
+import { generateRandom, shuffle } from '@/utils/utils.ts';
 
 Vue.use(Vuex);
 
 interface RootStore {
-    currentGameIndex: number;
-    countDots: CountDotsStore;
+  countDots: CountDotsStore;
 }
 
 interface CountDotsStore {
-    currentDotsCount: number;
-    currentVariants: number[];
+  question: number;
+  answers: number[];
 }
 
 
 export default new Vuex.Store({
-    modules: {
+  modules: {},
+  state: {
+    countDots: {
+      question: 0,
+      answers: [],
     },
-    state: {
-        currentGameIndex: 0,
-        countDots: {
-            currentDotsCount: 0,
-            currentVariants: [],
-        },
+  },
+  mutations: {
+    setQuestion(state: RootStore, value: number) {
+      state.countDots.question = value;
     },
-    mutations: {
+    setAnswers(state: RootStore, value: number[]) {
+      state.countDots.answers = value;
     },
-    actions: {
+  },
+  actions: {
+    initQuestion({state, commit, dispatch, getters}: any) {
+      const question: number = generateRandom(1, 5, []);
+      const answers: number[] = [];
+
+      answers.push(question);
+      answers.push(generateRandom(1, 5, answers));
+      answers.push(generateRandom(1, 5, answers));
+      answers.push(generateRandom(1, 5, answers));
+      commit('setQuestion', question);
+      commit('setAnswers', shuffle(answers));
     },
+  },
 } as any);
