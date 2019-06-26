@@ -11,8 +11,13 @@ interface RootStore {
 interface CountDotsStore {
   question: number;
   answers: number[];
+  statistics: CountDotsStatistics;
 }
 
+interface CountDotsStatistics {
+  wrong: number;
+  correct: number;
+}
 
 export default new Vuex.Store({
   modules: {},
@@ -20,6 +25,10 @@ export default new Vuex.Store({
     countDots: {
       question: 0,
       answers: [],
+      statistics: {
+        wrong: 0,
+        correct: 0,
+      },
     },
   },
   mutations: {
@@ -28,6 +37,12 @@ export default new Vuex.Store({
     },
     setAnswers(state: RootStore, value: number[]) {
       state.countDots.answers = value;
+    },
+    incWrong(state: RootStore) {
+      state.countDots.statistics.wrong++;
+    },
+    incCorrect(state: RootStore) {
+      state.countDots.statistics.correct++;
     },
   },
   actions: {
@@ -41,6 +56,15 @@ export default new Vuex.Store({
       answers.push(generateRandom(1, 5, answers));
       commit('setQuestion', question);
       commit('setAnswers', shuffle(answers));
+    },
+
+    processAnswer({state, commit, dispatch, getters}: any, userAnswer: number) {
+      if (userAnswer === state.countDots.question) {
+        commit('incCorrect');
+      } else {
+        commit('incWrong');
+      }
+      dispatch('initQuestion');
     },
   },
 } as any);

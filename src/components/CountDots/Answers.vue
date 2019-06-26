@@ -1,7 +1,7 @@
 <template>
   <div class="answers">
     <template v-for="answer in answers">
-      <div>{{answer}}</div>
+      <input type="button" :value="answer" @click="onClick(answer)" />
     </template>
   </div>
 </template>
@@ -12,6 +12,11 @@
   @Component
   export default class Answers extends Vue {
     @Prop() public answers!: number;
+
+    public onClick(value: number) {
+      this.$emit('onClick', value);
+    }
+
   }
 </script>
 
