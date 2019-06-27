@@ -21,4 +21,12 @@
 </script>
 
 <style scoped>
+  .answers {
+    margin-top: 40px;
+  }
+
+  .answers input {
+    margin: 10px;
+    font-size: 60px;
+  }
 </style>

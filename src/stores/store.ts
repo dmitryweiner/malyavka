@@ -19,6 +19,8 @@ interface CountDotsStatistics {
   correct: number;
 }
 
+const MAX_ITEMS = 6;
+
 export default new Vuex.Store({
   modules: {},
   state: {
@@ -47,13 +49,13 @@ export default new Vuex.Store({
   },
   actions: {
     initQuestion({state, commit, dispatch, getters}: any) {
-      const question: number = generateRandom(1, 5, []);
+      const question: number = generateRandom(1, MAX_ITEMS, []);
       const answers: number[] = [];
 
       answers.push(question);
-      answers.push(generateRandom(1, 5, answers));
-      answers.push(generateRandom(1, 5, answers));
-      answers.push(generateRandom(1, 5, answers));
+      answers.push(generateRandom(1, MAX_ITEMS, answers));
+      answers.push(generateRandom(1, MAX_ITEMS, answers));
+      answers.push(generateRandom(1, MAX_ITEMS, answers));
       commit('setQuestion', question);
       commit('setAnswers', shuffle(answers));
     },

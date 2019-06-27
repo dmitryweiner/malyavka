@@ -3,7 +3,7 @@
     <b-navbar toggleable="lg" type="dark" variant="info">
       <b-navbar-nav>
         <b-nav-item to="/">Главная страница</b-nav-item>
-        <b-nav-item to="/countDots">Игра "Посчитай точки"</b-nav-item>
+        <b-nav-item to="/countDots">Игра "Посчитай вещи"</b-nav-item>
       </b-navbar-nav>
     </b-navbar>
     <router-view/>
