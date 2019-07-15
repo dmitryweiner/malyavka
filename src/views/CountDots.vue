@@ -1,11 +1,19 @@
 <template>
-  <div class="main-screen">
+  <div class="count-dots">
     <h3>Посчитай вещи!</h3>
-    <Dots :dotsCount="$store.state.countDots.question" />
-    <Answers :answers="$store.state.countDots.answers" @onClick="onClick"/>
-    <Statistics
-      :correct="$store.state.countDots.statistics.correct"
-      :wrong="$store.state.countDots.statistics.wrong" />
+    <div class="wrapper">
+      <div class="row">
+        <Dots :dotsCount="$store.state.countDots.question" />
+      </div>
+      <div class="row">
+        <Answers :answers="$store.state.countDots.answers" @onClick="onClick"/>
+      </div>
+      <div class="row">
+        <Statistics
+          :correct="$store.state.countDots.statistics.correct"
+          :wrong="$store.state.countDots.statistics.wrong" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -36,4 +44,21 @@ export default class CountDots extends Vue {
 </script>
 
 <style scoped>
+  .count-dots {
+    height: calc(100% - 90px);
+  }
+
+  .wrapper {
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrapper .row {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 </style>
