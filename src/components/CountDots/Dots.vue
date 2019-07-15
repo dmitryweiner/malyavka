@@ -39,7 +39,17 @@
   .dots {
     margin-top: 20px;
     font-size: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
+
+  @media only screen and (max-width: 768px) {
+    .dots {
+      margin-top: 10px;
+      font-size: 30px;
+    }
+  }
+
 
   .dots span {
     margin: 10px;

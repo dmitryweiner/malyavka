@@ -1,10 +1,9 @@
 <template>
   <div class="statistics">
-    <div class="correct">
-      <template v-for="i in correct">{{'\u{1F36C}'}}</template>
-    </div>
-    <div class="wrong">
-      <template v-for="i in wrong">{{'\u{1F41B}'}}</template>
+    <div>
+      {{correct}}{{'\u{1F36C}'}}
+      &nbsp;&nbsp;
+      {{wrong}}{{'\u{1F41B}'}}
     </div>
   </div>
 </template>
@@ -26,8 +25,11 @@
     font-size: 40px;
   }
 
-  .statistics .correct, .statistics .wrong {
-    width: 50%;
-    margin: 0 auto;
+  @media only screen and (max-width: 768px) {
+    .statistics {
+      margin-top: 0;
+      font-size: 20px;
+    }
   }
+
 </style>

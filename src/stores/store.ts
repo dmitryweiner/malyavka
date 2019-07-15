@@ -19,7 +19,7 @@ interface CountDotsStatistics {
   correct: number;
 }
 
-const MAX_ITEMS = 6;
+const MAX_ITEMS = 9;
 
 export default new Vuex.Store({
   modules: {},

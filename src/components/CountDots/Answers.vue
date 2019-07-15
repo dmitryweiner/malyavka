@@ -29,4 +29,10 @@
     margin: 10px;
     font-size: 60px;
   }
+
+  @media only screen and (max-width: 768px) {
+    .answers input {
+      font-size: 30px;
+    }
+  }
 </style>
