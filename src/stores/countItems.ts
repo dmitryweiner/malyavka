@@ -18,6 +18,10 @@ export interface CountItemsStatistics {
 
 const MAX_ITEMS = 8;
 
+export enum Sounds {
+  WRONG_ANSWER = require('@/assets/sounds/alien.mp3'),
+}
+
 type CountItemsActionContext = ActionContext<CountItemsStore, RootStore>;
 
 export default {
@@ -62,6 +66,7 @@ export default {
         commit('incCorrect');
       } else {
         commit('incWrong');
+        dispatch('playSound', Sounds.WRONG_ANSWER, {root: true});
       }
       dispatch('initQuestion');
     },

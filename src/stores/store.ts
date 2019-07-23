@@ -14,5 +14,10 @@ export default new Vuex.Store({
   },
   state: {},
   mutations: {},
-  actions: {},
+  actions: {
+    playSound({ state }: any, url: string) {
+      const sound = new Audio(url);
+      sound.play();
+    },
+  },
 } as any);
