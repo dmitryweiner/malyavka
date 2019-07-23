@@ -20,6 +20,7 @@ const MAX_ITEMS = 8;
 
 export enum Sounds {
   WRONG_ANSWER = require('@/assets/sounds/alien.mp3'),
+  CORRECT_ANSWER = require('@/assets/sounds/click.mp3'),
 }
 
 type CountItemsActionContext = ActionContext<CountItemsStore, RootStore>;
@@ -64,6 +65,7 @@ export default {
     processAnswer({state, commit, dispatch, getters}: CountItemsActionContext, userAnswer: number) {
       if (userAnswer === state.question) {
         commit('incCorrect');
+        dispatch('playSound', Sounds.CORRECT_ANSWER, {root: true});
       } else {
         commit('incWrong');
         dispatch('playSound', Sounds.WRONG_ANSWER, {root: true});
