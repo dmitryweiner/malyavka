@@ -1,7 +1,7 @@
 <template>
   <div class="main-screen">
     <h1>Сборник игр для обучения мелких особей</h1>
-    <h3><router-link to="/countDots">Игра "Посчитай вещи"</router-link></h3>
+    <h3><router-link to="/countItems">Игра "Посчитай вещи"</router-link></h3>
   </div>
 </template>
 

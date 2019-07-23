@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import MainScreen from '@/views/MainScreen.vue';
-import CountDots from '@/views/CountDots.vue';
+import CountItems from '@/views/CountItems.vue';
 
 Vue.use(Router);
 
@@ -14,8 +14,8 @@ export default new Router({
             component: MainScreen,
         },
         {
-            path: '/countDots',
-            component: CountDots,
+            path: '/countItems',
+            component: CountItems,
         },
     ],
 });

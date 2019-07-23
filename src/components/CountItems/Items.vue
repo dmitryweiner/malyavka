@@ -1,6 +1,6 @@
 <template>
-  <div class="dots">
-    <template v-for="i in dotsCount"><span>{{getRandomSymbol()}}</span></template>
+  <div class="items">
+    <template v-for="i in itemsCount"><span>{{getRandomSymbol()}}</span></template>
   </div>
 </template>
 
@@ -8,8 +8,8 @@
   import { Component, Prop, Vue } from 'vue-property-decorator';
 
   @Component
-  export default class CountDots extends Vue {
-    @Prop() public dotsCount!: number;
+  export default class Items extends Vue {
+    @Prop() public itemsCount!: number;
 
     public getRandomSymbol(): string {
       const emoji = [
@@ -36,7 +36,7 @@
 </script>
 
 <style scoped>
-  .dots {
+  .items {
     margin-top: 20px;
     font-size: 60px;
     margin-left: 10px;
@@ -44,14 +44,14 @@
   }
 
   @media only screen and (max-width: 768px) {
-    .dots {
+    .items {
       margin-top: 10px;
       font-size: 30px;
     }
   }
 
 
-  .dots span {
+  .items span {
     margin: 10px;
   }
 </style>

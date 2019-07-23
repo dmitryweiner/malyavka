@@ -3,15 +3,15 @@
     <h3>Посчитай вещи!</h3>
     <div class="wrapper">
       <div class="row">
-        <Dots :dotsCount="$store.state.countDots.question" />
+        <Items :itemsCount="$store.state.countItems.question" />
       </div>
       <div class="row">
-        <Answers :answers="$store.state.countDots.answers" @onClick="onClick"/>
+        <Answers :answers="$store.state.countItems.answers" @onClick="onClick"/>
       </div>
       <div class="row">
         <Statistics
-          :correct="$store.state.countDots.statistics.correct"
-          :wrong="$store.state.countDots.statistics.wrong" />
+          :correct="$store.state.countItems.statistics.correct"
+          :wrong="$store.state.countItems.statistics.wrong" />
       </div>
     </div>
   </div>
@@ -19,25 +19,25 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Dots from '@/components/CountDots/Dots.vue';
-import Answers from '@/components/CountDots/Answers.vue';
-import Statistics from '@/components/CountDots/Statistics.vue';
+import Items from '@/components/CountItems/Items.vue';
+import Answers from '@/components/CountItems/Answers.vue';
+import Statistics from '@/components/CountItems/Statistics.vue';
 
 @Component({
   components: {
-    Dots,
+    Items,
     Answers,
     Statistics,
   },
 })
-export default class CountDots extends Vue {
+export default class CountItems extends Vue {
 
   public mounted() {
-    this.$store.dispatch('initQuestion');
+    this.$store.dispatch('countItems/initQuestion');
   }
 
   public onClick(value: number) {
-    this.$store.dispatch('processAnswer', value);
+    this.$store.dispatch('countItems/processAnswer', value);
   }
 
 }
