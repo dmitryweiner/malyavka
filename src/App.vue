@@ -3,8 +3,8 @@
     <b-navbar toggleable="lg" type="dark" variant="info">
       <b-navbar-nav>
         <b-nav-item to="/">Главная страница</b-nav-item>
-        <b-nav-item to="/countDots">"Посчитай вещи"</b-nav-item>
-        <b-nav-item to="/solveCalculus">"Реши пример"</b-nav-item>
+        <b-nav-item to="/countDots">Посчитай вещи</b-nav-item>
+        <b-nav-item to="/solveCalculus">Реши пример</b-nav-item>
       </b-navbar-nav>
     </b-navbar>
     <router-view/>
