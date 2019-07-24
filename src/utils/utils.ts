@@ -1,4 +1,4 @@
-export const generateRandom = (min: number, max: number, notSame: number[]) => {
+export const generateRandom = (min: number, max: number, notSame: number[] = []) => {
   let result;
   do {
     result = Number.parseInt((Math.random() * max + min) as any, 10);

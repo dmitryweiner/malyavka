@@ -1,17 +1,21 @@
 <template>
-  <div class="count-dots">
-    <h3>Посчитай вещи!</h3>
+  <div class="solve-calculus">
+    <h3>Реши примеры!</h3>
     <div class="wrapper">
       <div class="row">
-        <Items :itemsCount="$store.state.countItems.question" />
+        <Values
+          :firstValue="$store.state.solveCalculus.firstValue"
+          :secondValue="$store.state.solveCalculus.secondValue"
+          :sign="$store.state.solveCalculus.sign"
+        />
       </div>
       <div class="row">
-        <Answers :answers="$store.state.countItems.answers" @onClick="onClick"/>
+        <Answers :answers="$store.state.solveCalculus.answers" @onClick="onClick"/>
       </div>
       <div class="row">
         <Statistics
-          :correct="$store.state.countItems.statistics.correct"
-          :wrong="$store.state.countItems.statistics.wrong" />
+          :correct="$store.state.solveCalculus.statistics.correct"
+          :wrong="$store.state.solveCalculus.statistics.wrong" />
       </div>
     </div>
   </div>
@@ -19,13 +23,13 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Items from '@/components/CountItems/Items.vue';
+import Values from '@/components/SolveCalculus/Values.vue';
 import Answers from '@/components/common/Answers.vue';
 import Statistics from '@/components/common/Statistics.vue';
 
 @Component({
   components: {
-    Items,
+    Values,
     Answers,
     Statistics,
   },
@@ -33,29 +37,29 @@ import Statistics from '@/components/common/Statistics.vue';
 export default class CountItems extends Vue {
 
   public mounted() {
-    this.$store.dispatch('countItems/initQuestion');
+    this.$store.dispatch('solveCalculus/initQuestion');
   }
 
   public onClick(value: number) {
-    this.$store.dispatch('countItems/processAnswer', value);
+    this.$store.dispatch('solveCalculus/processAnswer', value);
   }
 
 }
 </script>
 
 <style scoped>
-  .count-dots {
+  .solve-calculus {
     height: calc(100% - 90px);
   }
 
-  .wrapper {
+  .solve-calculus .wrapper {
     height: 100%;
     min-height: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  .wrapper .row {
+  .solve-calculus .wrapper .row {
     flex: 1;
     display: flex;
     justify-content: center;
