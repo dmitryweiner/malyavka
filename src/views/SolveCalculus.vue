@@ -1,6 +1,6 @@
 <template>
   <div class="solve-calculus">
-    <h3>Реши примеры!</h3>
+    <h3>Реши пример</h3>
     <div class="wrapper">
       <div class="row">
         <Values
