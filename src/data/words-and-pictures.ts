@@ -175,4 +175,16 @@ export default [
     picture: 'fen.jpg',
     word: 'фен',
   },
+  {
+    picture: 'cicada.jpg',
+    word: 'цикада',
+  },
+  {
+    picture: 'cyplenok.jpg',
+    word: 'цыплёнок',
+  },
+  {
+    picture: 'yaschik.jpg',
+    word: 'ящик',
+  },
 ];
