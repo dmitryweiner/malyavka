@@ -5,7 +5,7 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item to="/countItems">Посчитай вещи</b-nav-item>
+          <b-nav-item to="/countItems">Посчитай картинки</b-nav-item>
           <b-nav-item to="/solveCalculus">Реши пример</b-nav-item>
           <b-nav-item to="/guessFirstLetter">Угадай букву</b-nav-item>
         </b-navbar-nav>
@@ -41,5 +41,11 @@
   body {
     height: 100%;
     overflow-y: hidden;
+  }
+
+  @font-face {
+    font-family: 'emoji';
+    src: url('./assets/fonts/emojione-svg.woff2')
+    format('woff2');
   }
 </style>

@@ -41,6 +41,7 @@
     font-size: 60px;
     margin-left: 10px;
     margin-right: 10px;
+    font-family: 'emoji';
   }
 
   @media only screen and (max-width: 768px) {

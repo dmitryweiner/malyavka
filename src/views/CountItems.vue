@@ -1,6 +1,6 @@
 <template>
   <div class="count-dots">
-    <h3>Посчитай вещи!</h3>
+    <h3>Посчитай картинки!</h3>
     <div class="wrapper">
       <div class="row">
         <Items :itemsCount="$store.state.countItems.question" />

@@ -1,9 +1,9 @@
 <template>
   <div class="statistics">
     <div>
-      {{correct}}{{'\u{1F36C}'}}
+      {{correct}}<span class="emoji">{{'\u{1F36C}'}}</span>
       &nbsp;&nbsp;
-      {{wrong}}{{'\u{1F41B}'}}
+      {{wrong}}<span class="emoji">{{'\u{1F41B}'}}</span>
     </div>
   </div>
 </template>
@@ -23,6 +23,10 @@
     width: 100%;
     margin-top: 40px;
     font-size: 40px;
+  }
+
+  .statistics .emoji {
+    font-family: 'emoji';
   }
 
   @media only screen and (max-width: 768px) {
