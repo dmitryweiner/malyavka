@@ -144,8 +144,8 @@ export default [
     word: 'соль',
   },
   {
-    picture: 'solnce.jpg',
-    word: 'солнце',
+    picture: 'svyokla.jpg',
+    word: 'свёкла',
   },
   {
     picture: 'topor.jpg',
@@ -186,5 +186,13 @@ export default [
   {
     picture: 'yaschik.jpg',
     word: 'ящик',
+  },
+  {
+    picture: 'morkov.jpg',
+    word: 'морковь',
+  },
+  {
+    picture: 'ogurec.jpg',
+    word: 'огурец',
   },
 ];
