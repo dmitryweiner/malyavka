@@ -1,7 +1,7 @@
 <template>
   <div class="answers">
     <template v-for="answer in answers">
-      <input type="button" :value="answer" @click="onClick(answer)" />
+      <input type="button" :value="getAnswerCaption(answer)" @click="onClick(answer)" />
     </template>
   </div>
 </template>
@@ -15,6 +15,13 @@
 
     public onClick(value: number) {
       this.$emit('onClick', value);
+    }
+
+    public getAnswerCaption(answer: any): string {
+      if (typeof answer === 'string') {
+        return answer.toUpperCase();
+      }
+      return answer;
     }
 
   }

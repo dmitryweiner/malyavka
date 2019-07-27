@@ -3,6 +3,7 @@
     <span>{{firstValue}}</span>
     <span :class="{'sign add': isSignAdd, 'sign subtract': !isSignAdd}">{{sign}}</span>
     <span>{{secondValue}}</span>
+    <span>=</span>
   </div>
 </template>
 

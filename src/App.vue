@@ -7,6 +7,7 @@
         <b-navbar-nav>
           <b-nav-item to="/countItems">Посчитай вещи</b-nav-item>
           <b-nav-item to="/solveCalculus">Реши пример</b-nav-item>
+          <b-nav-item to="/guessFirstLetter">Угадай букву</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>

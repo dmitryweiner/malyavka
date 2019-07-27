@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import MainScreen from '@/views/MainScreen.vue';
 import CountItems from '@/views/CountItems.vue';
 import SolveCalculus from '@/views/SolveCalculus.vue';
+import GuessFirstLetter from '@/views/GuessFirstLetter.vue';
 
 Vue.use(Router);
 
@@ -21,6 +22,10 @@ export default new Router({
     {
       path: '/solveCalculus',
       component: SolveCalculus,
+    },
+    {
+      path: '/guessFirstLetter',
+      component: GuessFirstLetter,
     },
 
   ],

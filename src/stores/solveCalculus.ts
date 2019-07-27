@@ -20,7 +20,7 @@ export interface SolveCalculusStatistics {
 
 export enum Signs {
   ADD = '+',
-  SUBTRACT = '-',
+  SUBTRACT = '−',
 }
 
 const MAX_VALUE = 4;
