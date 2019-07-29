@@ -108,10 +108,8 @@ export default {
       }
       commit('setIsShowingAnswer', true);
       setTimeout(() => {
-/*
         commit('setIsShowingAnswer', false);
         dispatch('initQuestion');
-*/
       }, SHOWING_ANSWER_TIMEOUT);
 
     },
