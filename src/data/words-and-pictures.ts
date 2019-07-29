@@ -92,7 +92,7 @@ export default [
     word: 'мясо',
   },
   {
-    picture: 'noga.jpg',
+    picture: 'noga.png',
     word: 'нога',
   },
   {
