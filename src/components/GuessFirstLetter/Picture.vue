@@ -1,6 +1,6 @@
 <template>
   <div class="picture">
-    <img src="@/assets/loader.gif" v-show="isLoading"/>
+    <img src="@/assets/loader2.gif" v-show="isLoading"/>
     <img :src="iconUrl" v-on:load="onLoaded" v-show="!isLoading"/>
   </div>
 </template>
@@ -13,6 +13,7 @@
   export default class Picture extends Vue {
     @Prop() public question!: WordAndPicture;
     private isLoading: boolean = false;
+    private timeoutId?: number;
 
     get iconUrl() {
       if (this.question.picture) {
@@ -22,11 +23,12 @@
 
     @Watch('iconUrl')
     private onIconUrlChanged() {
-      this.isLoading = true;
+      this.timeoutId = setTimeout(() => this.isLoading = true, 250);
     }
 
     private onLoaded() {
       this.isLoading = false;
+      clearTimeout(this.timeoutId);
     }
   }
 </script>
