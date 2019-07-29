@@ -60,7 +60,7 @@ export default {
   },
   actions: {
     initQuestion({state, commit, dispatch, getters}: GuessFirstLetterActionContext) {
-      const index = Math.ceil(Math.random() * wordsAndPictures.length);
+      const index = Math.floor(Math.random() * wordsAndPictures.length);
       const question: WordAndPicture = wordsAndPictures[index];
       const answers: string[] = [
         question.word[0],
