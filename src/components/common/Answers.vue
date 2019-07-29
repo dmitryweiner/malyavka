@@ -75,11 +75,11 @@
   }
 
   .correct {
-    color: darkgreen;
+    color: green;
   }
 
   .wrong {
-    color: darkred;
+    color: red;
   }
 
 </style>
