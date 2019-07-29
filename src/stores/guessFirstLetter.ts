@@ -7,7 +7,10 @@ import {RootStore} from '@/stores/store';
 Vue.use(Vuex);
 
 export interface GuessFirstLetterStore {
+  isShowingAnswer: boolean;
   question: WordAndPicture;
+  userAnswer: string;
+  correctAnswer: string;
   answers: string[];
   statistics: GuessFirstLetterStatistics;
 }
@@ -29,14 +32,19 @@ export enum Sounds {
 
 type GuessFirstLetterActionContext = ActionContext<GuessFirstLetterStore, RootStore>;
 
+const SHOWING_ANSWER_TIMEOUT = 1500;
+
 export default {
   namespaced: true,
   state: {
+    isShowingAnswer: false,
     question: {
       word: '',
       picture: '',
     },
     answers: [],
+    userAnswer: '',
+    correctAnswer: '',
     statistics: {
       wrong: 0,
       correct: 0,
@@ -57,6 +65,15 @@ export default {
     incCorrect(state: GuessFirstLetterStore) {
       state.statistics.correct++;
     },
+    setIsShowingAnswer(state: GuessFirstLetterStore, value: boolean) {
+      state.isShowingAnswer = value;
+    },
+    setUserAnswer(state: GuessFirstLetterStore, value: string) {
+      state.userAnswer = value;
+    },
+    setCorrectAnswer(state: GuessFirstLetterStore, value: string) {
+      state.correctAnswer = value;
+    },
   },
   actions: {
     initQuestion({state, commit, dispatch, getters}: GuessFirstLetterActionContext) {
@@ -70,10 +87,12 @@ export default {
       answers.push(generateRandomLetter(answers));
       answers.push(generateRandomLetter(answers));
       commit('setQuestion', question);
+      commit('setCorrectAnswer', question.word[0]);
       commit('setAnswers', shuffle(answers));
     },
 
     processAnswer({state, commit, dispatch, getters}: GuessFirstLetterActionContext, userAnswer: string) {
+      commit('setUserAnswer', userAnswer);
       let isCorrect = false;
 
       if (state.question.word[0] === userAnswer) {
@@ -87,7 +106,14 @@ export default {
         commit('incWrong');
         dispatch('playSound', Sounds.WRONG_ANSWER, {root: true});
       }
-      dispatch('initQuestion');
+      commit('setIsShowingAnswer', true);
+      setTimeout(() => {
+/*
+        commit('setIsShowingAnswer', false);
+        dispatch('initQuestion');
+*/
+      }, SHOWING_ANSWER_TIMEOUT);
+
     },
   },
 };

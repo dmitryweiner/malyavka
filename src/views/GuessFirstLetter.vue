@@ -1,14 +1,20 @@
 <template>
-  <div class="solve-calculus">
+  <div class="guess-first-letter">
     <h3>Угадай первую букву</h3>
     <div class="wrapper">
       <div class="row">
         <Picture
           :question="$store.state.guessFirstLetter.question"
+          :isShowingAnswer="$store.state.guessFirstLetter.isShowingAnswer"
         />
       </div>
       <div class="row">
-        <Answers :answers="$store.state.guessFirstLetter.answers" @onClick="onClick"/>
+        <Answers
+          :answers="$store.state.guessFirstLetter.answers"
+          :isShowingAnswer="$store.state.guessFirstLetter.isShowingAnswer"
+          :userAnswer="$store.state.guessFirstLetter.userAnswer"
+          :correctAnswer="$store.state.guessFirstLetter.correctAnswer"
+          @onClick="onClick"/>
       </div>
       <div class="row">
         <Statistics
@@ -39,25 +45,27 @@ export default class GuessFirstLetter extends Vue {
   }
 
   public onClick(value: number) {
-    this.$store.dispatch('guessFirstLetter/processAnswer', value);
+    if (!this.$store.state.guessFirstLetter.isShowingAnswer) {
+      this.$store.dispatch('guessFirstLetter/processAnswer', value);
+    }
   }
 
 }
 </script>
 
 <style scoped>
-  .solve-calculus {
+  .guess-first-letter {
     height: calc(100% - 90px);
   }
 
-  .solve-calculus .wrapper {
+  guess-first-letter .wrapper {
     height: 100%;
     min-height: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  .solve-calculus .wrapper .row {
+  .guess-first-letter .wrapper .row {
     flex: 1;
     display: flex;
     justify-content: center;

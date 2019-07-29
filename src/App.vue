@@ -41,6 +41,7 @@
   body {
     height: 100%;
     overflow-y: hidden;
+    overflow-x: hidden;
   }
 
   @font-face {
