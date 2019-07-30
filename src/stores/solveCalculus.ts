@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Vuex, {ActionContext} from 'vuex';
 import { generateRandom, shuffle } from '@/utils/utils.ts';
 import {RootStore} from '@/stores/store';
-import {GuessFirstLetterStore, WordAndPicture} from '@/stores/guessFirstLetter';
 
 Vue.use(Vuex);
 
@@ -70,13 +69,13 @@ export default {
     incCorrect(state: SolveCalculusStore) {
       state.statistics.correct++;
     },
-    setIsShowingAnswer(state: GuessFirstLetterStore, value: boolean) {
+    setIsShowingAnswer(state: SolveCalculusStore, value: boolean) {
       state.isShowingAnswer = value;
     },
-    setUserAnswer(state: GuessFirstLetterStore, value: string) {
+    setUserAnswer(state: SolveCalculusStore, value: number) {
       state.userAnswer = value;
     },
-    setCorrectAnswer(state: GuessFirstLetterStore, value: string) {
+    setCorrectAnswer(state: SolveCalculusStore, value: number) {
       state.correctAnswer = value;
     },
   },
