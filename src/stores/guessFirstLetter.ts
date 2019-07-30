@@ -113,5 +113,9 @@ export default {
       }, SHOWING_ANSWER_TIMEOUT);
 
     },
+
+    getPictures({state, commit, dispatch, getters}: GuessFirstLetterActionContext) {
+      return wordsAndPictures;
+    },
   },
 };

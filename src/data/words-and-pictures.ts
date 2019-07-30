@@ -195,4 +195,96 @@ export default [
     picture: 'ogurec.jpg',
     word: 'огурец',
   },
+  {
+    picture: 'muha.jpg',
+    word: 'муха',
+  },
+  {
+    picture: 'vertolet.jpg',
+    word: 'вертолёт',
+  },
+  {
+    picture: 'samolet.jpg',
+    word: 'самолёт',
+  },
+  {
+    picture: 'parashut.jpg',
+    word: 'парашют',
+  },
+  {
+    picture: 'microscope.jpg',
+    word: 'микроскоп',
+  },
+  {
+    picture: 'mouse.jpg',
+    word: 'мышь',
+  },
+  {
+    picture: 'hamster.jpg',
+    word: 'хомяк',
+  },
+  {
+    picture: 'raduga.png',
+    word: 'радуга',
+  },
+  {
+    picture: 'ulitka.jpg',
+    word: 'улитка',
+  },
+  {
+    picture: 'gusenitsa.jpg',
+    word: 'гусеница',
+  },
+  {
+    picture: 'vilka.jpg',
+    word: 'вилка',
+  },
+  {
+    picture: 'lozhka.jpg',
+    word: 'ложка',
+  },
+  {
+    picture: 'tarelka.jpg',
+    word: 'тарелка',
+  },
+  {
+    picture: 'sosiska.jpg',
+    word: 'сосиска',
+  },
+  {
+    picture: 'kolbasa.jpg',
+    word: 'колбаса',
+  },
+  {
+    picture: 'hleb.jpg',
+    word: 'хлеб',
+  },
+  {
+    picture: 'pomidor.jpg',
+    word: 'помидор',
+  },
+  {
+    picture: 'grusha.jpg',
+    word: 'груша',
+  },
+  {
+    picture: 'vinograd.jpg',
+    word: 'виноград',
+  },
+  {
+    picture: 'stakan.jpg',
+    word: 'стакан',
+  },
+  {
+    picture: 'ruka.jpg',
+    word: 'рука',
+  },
+  {
+    picture: 'romashka.jpg',
+    word: 'ромашка',
+  },
+  {
+    picture: 'sobaka.jpg',
+    word: 'собака',
+  },
 ];

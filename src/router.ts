@@ -4,6 +4,7 @@ import MainScreen from '@/views/MainScreen.vue';
 import CountItems from '@/views/CountItems.vue';
 import SolveCalculus from '@/views/SolveCalculus.vue';
 import GuessFirstLetter from '@/views/GuessFirstLetter.vue';
+import TestPictures from '@/views/TestPictures.vue';
 
 Vue.use(Router);
 
@@ -26,6 +27,10 @@ export default new Router({
     {
       path: '/guessFirstLetter',
       component: GuessFirstLetter,
+    },
+    {
+      path: '/testPictures',
+      component: TestPictures,
     },
 
   ],
