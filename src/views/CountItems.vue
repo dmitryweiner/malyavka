@@ -3,10 +3,17 @@
     <h3>Посчитай картинки!</h3>
     <div class="wrapper">
       <div class="row">
-        <Items :itemsCount="$store.state.countItems.question" />
+        <Items
+          :isShowingAnswer="$store.state.countItems.isShowingAnswer"
+          :itemsCount="$store.state.countItems.question" />
       </div>
       <div class="row">
-        <Answers :answers="$store.state.countItems.answers" @onClick="onClick"/>
+        <Answers
+          :answers="$store.state.countItems.answers"
+          :isShowingAnswer="$store.state.countItems.isShowingAnswer"
+          :userAnswer="$store.state.countItems.userAnswer"
+          :correctAnswer="$store.state.countItems.question"
+          @onClick="onClick"/>
       </div>
       <div class="row">
         <Statistics

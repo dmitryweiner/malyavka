@@ -1,6 +1,9 @@
 <template>
   <div class="items">
     <template v-for="i in itemsCount"><span>{{getRandomSymbol()}}</span></template>
+    <div>
+      {{isShowingAnswer ? itemsCount : '&nbsp;'}}
+    </div>
   </div>
 </template>
 
@@ -10,6 +13,7 @@
   @Component
   export default class Items extends Vue {
     @Prop() public itemsCount!: number;
+    @Prop() public isShowingAnswer?: boolean;
 
     public getRandomSymbol(): string {
       const emoji = [

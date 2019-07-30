@@ -2,10 +2,13 @@ import Vue from 'vue';
 import Vuex, {ActionContext} from 'vuex';
 import { generateRandom, shuffle } from '@/utils/utils.ts';
 import {RootStore} from '@/stores/store';
+import {GuessFirstLetterStore} from '@/stores/guessFirstLetter';
 
 Vue.use(Vuex);
 
 export interface CountItemsStore {
+  isShowingAnswer: boolean;
+  userAnswer: number;
   question: number;
   answers: number[];
   statistics: CountItemsStatistics;
@@ -25,9 +28,13 @@ export enum Sounds {
 
 type CountItemsActionContext = ActionContext<CountItemsStore, RootStore>;
 
+const SHOWING_ANSWER_TIMEOUT = 1500;
+
 export default {
   namespaced: true,
   state: {
+    isShowingAnswer: false,
+    userAnswer: 0,
     question: 0,
     answers: [],
     statistics: {
@@ -48,6 +55,12 @@ export default {
     incCorrect(state: CountItemsStore) {
       state.statistics.correct++;
     },
+    setIsShowingAnswer(state: GuessFirstLetterStore, value: boolean) {
+      state.isShowingAnswer = value;
+    },
+    setUserAnswer(state: GuessFirstLetterStore, value: string) {
+      state.userAnswer = value;
+    },
   },
   actions: {
     initQuestion({state, commit, dispatch, getters}: CountItemsActionContext) {
@@ -63,6 +76,7 @@ export default {
     },
 
     processAnswer({state, commit, dispatch, getters}: CountItemsActionContext, userAnswer: number) {
+      commit('setUserAnswer', userAnswer);
       if (userAnswer === state.question) {
         commit('incCorrect');
         dispatch('playSound', Sounds.CORRECT_ANSWER, {root: true});
@@ -70,7 +84,11 @@ export default {
         commit('incWrong');
         dispatch('playSound', Sounds.WRONG_ANSWER, {root: true});
       }
-      dispatch('initQuestion');
+      commit('setIsShowingAnswer', true);
+      setTimeout(() => {
+        commit('setIsShowingAnswer', false);
+        dispatch('initQuestion');
+      }, SHOWING_ANSWER_TIMEOUT);
     },
   },
 };
