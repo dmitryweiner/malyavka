@@ -4,6 +4,7 @@
     <span :class="{'sign add': isSignAdd, 'sign subtract': !isSignAdd}">{{sign}}</span>
     <span>{{secondValue}}</span>
     <span>=</span>
+    <span v-if="isShowingAnswer">{{correctAnswer}}</span>
   </div>
 </template>
 
@@ -16,6 +17,8 @@
     @Prop() public firstValue!: number;
     @Prop() public secondValue!: number;
     @Prop() public sign!: Signs;
+    @Prop() public isShowingAnswer!: boolean;
+    @Prop() public correctAnswer!: number;
 
     get isSignAdd(): boolean {
       return this.sign === Signs.ADD;

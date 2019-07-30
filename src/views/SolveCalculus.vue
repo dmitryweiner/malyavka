@@ -7,10 +7,17 @@
           :firstValue="$store.state.solveCalculus.firstValue"
           :secondValue="$store.state.solveCalculus.secondValue"
           :sign="$store.state.solveCalculus.sign"
+          :isShowingAnswer="$store.state.solveCalculus.isShowingAnswer"
+          :correctAnswer="$store.state.solveCalculus.correctAnswer"
         />
       </div>
       <div class="row">
-        <Answers :answers="$store.state.solveCalculus.answers" @onClick="onClick"/>
+        <Answers
+          :answers="$store.state.solveCalculus.answers"
+          :isShowingAnswer="$store.state.solveCalculus.isShowingAnswer"
+          :userAnswer="$store.state.solveCalculus.userAnswer"
+          :correctAnswer="$store.state.solveCalculus.correctAnswer"
+          @onClick="onClick"/>
       </div>
       <div class="row">
         <Statistics

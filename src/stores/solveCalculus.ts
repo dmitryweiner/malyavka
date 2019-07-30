@@ -2,10 +2,14 @@ import Vue from 'vue';
 import Vuex, {ActionContext} from 'vuex';
 import { generateRandom, shuffle } from '@/utils/utils.ts';
 import {RootStore} from '@/stores/store';
+import {GuessFirstLetterStore, WordAndPicture} from '@/stores/guessFirstLetter';
 
 Vue.use(Vuex);
 
 export interface SolveCalculusStore {
+  isShowingAnswer: boolean;
+  userAnswer: number;
+  correctAnswer: number;
   firstValue: number;
   secondValue: number;
   sign: Signs;
@@ -32,9 +36,14 @@ export enum Sounds {
 
 type SolveCalculusActionContext = ActionContext<SolveCalculusStore, RootStore>;
 
+const SHOWING_ANSWER_TIMEOUT = 1500;
+
 export default {
   namespaced: true,
   state: {
+    isShowingAnswer: false,
+    userAnswer: 0,
+    correctAnswer: 0,
     firstValue: 0,
     secondValue: 0,
     sign: Signs.ADD,
@@ -61,6 +70,15 @@ export default {
     incCorrect(state: SolveCalculusStore) {
       state.statistics.correct++;
     },
+    setIsShowingAnswer(state: GuessFirstLetterStore, value: boolean) {
+      state.isShowingAnswer = value;
+    },
+    setUserAnswer(state: GuessFirstLetterStore, value: string) {
+      state.userAnswer = value;
+    },
+    setCorrectAnswer(state: GuessFirstLetterStore, value: string) {
+      state.correctAnswer = value;
+    },
   },
   actions: {
     initQuestion({state, commit, dispatch, getters}: SolveCalculusActionContext) {
@@ -80,8 +98,10 @@ export default {
 
       if (sign === Signs.SUBTRACT) {
         answers.push(firstValue - secondValue);
+        commit('setCorrectAnswer', firstValue - secondValue);
       } else {
         answers.push(firstValue + secondValue);
+        commit('setCorrectAnswer', firstValue + secondValue);
       }
 
       answers.push(generateRandom(1, MAX_VALUE, answers));
@@ -92,6 +112,7 @@ export default {
     },
 
     processAnswer({state, commit, dispatch, getters}: SolveCalculusActionContext, userAnswer: number) {
+      commit('setUserAnswer', userAnswer);
       let isCorrect = false;
 
       if (state.sign === Signs.SUBTRACT) {
@@ -107,7 +128,11 @@ export default {
         commit('incWrong');
         dispatch('playSound', Sounds.WRONG_ANSWER, {root: true});
       }
-      dispatch('initQuestion');
+      commit('setIsShowingAnswer', true);
+      setTimeout(() => {
+        commit('setIsShowingAnswer', false);
+        dispatch('initQuestion');
+      }, SHOWING_ANSWER_TIMEOUT);
     },
   },
 };
