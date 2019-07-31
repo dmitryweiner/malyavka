@@ -4,6 +4,7 @@
     <h3><router-link to="/countItems">Посчитай картинки</router-link></h3>
     <h3><router-link to="/solveCalculus">Реши пример</router-link></h3>
     <h3><router-link to="/guessFirstLetter">Угадай букву</router-link></h3>
+    <h3><router-link to="/englishLearning">Учим английский</router-link></h3>
   </div>
 </template>
 
