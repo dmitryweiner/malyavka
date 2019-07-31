@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import countItems, { CountItemsStore } from '@/stores/countItems.ts';
 import solveCalculus from '@/stores/solveCalculus.ts';
 import guessFirstLetter from '@/stores/guessFirstLetter.ts';
+import englishLearning from '@/stores/englishLearning.ts';
 
 Vue.use(Vuex);
 
@@ -15,6 +16,7 @@ export default new Vuex.Store({
     countItems,
     solveCalculus,
     guessFirstLetter,
+    englishLearning,
   },
   state: {},
   mutations: {},

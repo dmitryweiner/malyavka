@@ -1,9 +1,9 @@
 <template>
   <div class="statistics">
     <div>
-      {{correct}}<span class="emoji">{{'\u{1F36C}'}}</span>
+      <span class="correct">{{correct}}</span><span class="emoji">{{'\u{1F36C}'}}</span>
       &nbsp;&nbsp;
-      {{wrong}}<span class="emoji">{{'\u{1F41B}'}}</span>
+      <span class="wrong">{{wrong}}</span><span class="emoji">{{'\u{1F41B}'}}</span>
     </div>
   </div>
 </template>
@@ -34,6 +34,14 @@
       margin-top: 0;
       font-size: 20px;
     }
+  }
+
+  .correct {
+    color: darkgreen;
+  }
+
+  .wrong {
+    color: darkred;
   }
 
 </style>

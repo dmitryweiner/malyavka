@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { WordAndPicture } from 'src/stores/guessFirstLetter';
+import { WordAndPicture } from 'src/interfaces/words-and-picture-interface';
 
 @Component({})
 export default class TestPictures extends Vue {

@@ -2,7 +2,7 @@
   <div class="picture">
     <img src="@/assets/loader2.gif" v-show="isLoading"/>
     <img :src="iconUrl" v-on:load="onLoaded" v-show="!isLoading"/>
-    <div class="answer" v-if="isShowingAnswer">
+    <div class="word">
       <span>{{this.question.word.ru}}</span>
     </div>
   </div>
@@ -13,7 +13,7 @@
   import { WordAndPicture } from 'src/interfaces/words-and-picture-interface';
 
   @Component
-  export default class Picture extends Vue {
+  export default class PictureAndWord extends Vue {
     @Prop() public question!: WordAndPicture;
     @Prop() public isShowingAnswer!: boolean;
     private isLoading: boolean = false;
@@ -58,17 +58,23 @@
     min-height: 200px;
   }
 
-  .answer {
+  .word {
     width: 100%;
     bottom: 15px;
     position: absolute;
   }
 
-  .answer span {
+  .word span {
     font-size: 40px;
     background-color: white;
     padding: 5px;
     border-radius: 5px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .word span {
+      font-size: 20px;
+    }
   }
 
 </style>

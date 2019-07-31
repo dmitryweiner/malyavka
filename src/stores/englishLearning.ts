@@ -1,22 +1,22 @@
 import Vue from 'vue';
 import Vuex, { ActionContext } from 'vuex';
-import { generateRandomLetter, shuffle } from '@/utils/utils.ts';
+import { shuffle } from '@/utils/utils.ts';
 import wordsAndPictures from '@/data/words-and-pictures.ts';
 import { RootStore } from '@/stores/store';
 import { WordAndPicture } from '@/interfaces/words-and-picture-interface';
 
 Vue.use(Vuex);
 
-export interface GuessFirstLetterStore {
+export interface EnglishLearningStore {
   isShowingAnswer: boolean;
   question: WordAndPicture;
   userAnswer: string;
   correctAnswer: string;
   answers: string[];
-  statistics: GuessFirstLetterStatistics;
+  statistics: EnglishLearningStatistics;
 }
 
-export interface GuessFirstLetterStatistics {
+export interface EnglishLearningStatistics {
   wrong: number;
   correct: number;
 }
@@ -26,7 +26,7 @@ export enum Sounds {
   CORRECT_ANSWER = require('@/assets/sounds/click.mp3'),
 }
 
-type GuessFirstLetterActionContext = ActionContext<GuessFirstLetterStore, RootStore>;
+type EnglishLearningActionContext = ActionContext<EnglishLearningStore, RootStore>;
 
 const SHOWING_ANSWER_TIMEOUT = 1500;
 
@@ -51,47 +51,51 @@ export default {
   },
   mutations: {
     setQuestion(
-      state: GuessFirstLetterStore,
+      state: EnglishLearningStore,
       question: WordAndPicture) {
       state.question = question;
     },
-    setAnswers(state: GuessFirstLetterStore, value: string[]) {
+    setAnswers(state: EnglishLearningStore, value: string[]) {
       state.answers = value;
     },
-    incWrong(state: GuessFirstLetterStore) {
+    incWrong(state: EnglishLearningStore) {
       state.statistics.wrong++;
     },
-    incCorrect(state: GuessFirstLetterStore) {
+    incCorrect(state: EnglishLearningStore) {
       state.statistics.correct++;
     },
-    setIsShowingAnswer(state: GuessFirstLetterStore, value: boolean) {
+    setIsShowingAnswer(state: EnglishLearningStore, value: boolean) {
       state.isShowingAnswer = value;
     },
-    setUserAnswer(state: GuessFirstLetterStore, value: string) {
+    setUserAnswer(state: EnglishLearningStore, value: string) {
       state.userAnswer = value;
     },
-    setCorrectAnswer(state: GuessFirstLetterStore, value: string) {
+    setCorrectAnswer(state: EnglishLearningStore, value: string) {
       state.correctAnswer = value;
     },
   },
   actions: {
-    initQuestion({state, commit, dispatch, getters}: GuessFirstLetterActionContext) {
+    initQuestion({state, commit, dispatch, getters}: EnglishLearningActionContext) {
       const index = Math.floor(Math.random() * wordsAndPictures.length);
       const question: WordAndPicture = wordsAndPictures[index];
       const answers: string[] = [
-        question.word.ru[0],
+        question.word.en,
       ];
 
       for (let i = 0; i < 3; i++) {
-        answers.push(generateRandomLetter(answers));
+        let answer;
+        do {
+          answer =  wordsAndPictures[Math.floor(Math.random() * wordsAndPictures.length)].word.en;
+        } while (answers.includes(answer));
+        answers.push(answer);
       }
 
       commit('setQuestion', question);
-      commit('setCorrectAnswer', question.word.ru[0]);
+      commit('setCorrectAnswer', question.word.en);
       commit('setAnswers', shuffle(answers));
     },
 
-    processAnswer({state, commit, dispatch, getters}: GuessFirstLetterActionContext, userAnswer: string) {
+    processAnswer({state, commit, dispatch, getters}: EnglishLearningActionContext, userAnswer: string) {
       commit('setUserAnswer', userAnswer);
       let isCorrect = false;
 
@@ -114,7 +118,7 @@ export default {
 
     },
 
-    getPictures({state, commit, dispatch, getters}: GuessFirstLetterActionContext) {
+    getPictures({state, commit, dispatch, getters}: EnglishLearningActionContext) {
       return wordsAndPictures;
     },
   },

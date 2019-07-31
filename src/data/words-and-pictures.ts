@@ -1,290 +1,506 @@
 export default [
   {
     picture: 'ananas.jpg',
-    word: 'ананас',
+    word: {
+      ru: 'ананас',
+      en: 'pineapple',
+    },
   },
   {
     picture: 'arbuz.jpg',
-    word: 'арбуз',
+    word: {
+      ru: 'арбуз',
+      en: 'watermelon',
+    },
   },
   {
     picture: 'banana.jpg',
-    word: 'банан',
+    word: {
+      ru: 'банан',
+      en: 'banana',
+    },
   },
   {
     picture: 'butterfly.jpg',
-    word: 'бабочка',
+    word: {
+      ru: 'бабочка',
+      en: 'butterfly',
+    },
   },
   {
     picture: 'derevo.jpg',
-    word: 'дерево',
+    word: {
+      ru: 'дерево',
+      en: 'tree',
+    },
   },
   {
     picture: 'dom.jpg',
-    word: 'дом',
+    word: {
+      ru: 'дом',
+      en: 'house',
+    },
   },
   {
     picture: 'el.jpg',
-    word: 'ель',
+    word: {
+      ru: 'ель',
+      en: 'fir',
+    },
   },
   {
     picture: 'golub.jpg',
-    word: 'голубь',
+    word: {
+      ru: 'голубь',
+      en: 'pigeon',
+    },
   },
   {
     picture: 'gus.jpg',
-    word: 'гусь',
+    word: {
+      ru: 'гусь',
+      en: 'goose',
+    },
   },
   {
     picture: 'igla.jpg',
-    word: 'игла',
+    word: {
+      ru: 'игла',
+      en: 'needle',
+    },
   },
   {
     picture: 'kon.jpg',
-    word: 'конь',
+    word: {
+      ru: 'конь',
+      en: 'horse',
+    },
   },
   {
     picture: 'kot.jpg',
-    word: 'кот',
+    word: {
+      ru: 'кот',
+      en: 'cat',
+    },
   },
   {
     picture: 'liaz.png',
-    word: 'автобус',
+    word: {
+      ru: 'автобус',
+      en: 'bus',
+    },
   },
   {
     picture: 'lodka.jpg',
-    word: 'лодка',
+    word: {
+      ru: 'лодка',
+      en: 'boat',
+    },
   },
   {
     picture: 'luk.jpg',
-    word: 'лук',
+    word: {
+      ru: 'лук',
+      en: 'onion',
+    },
   },
   {
     picture: 'vorona.jpg',
-    word: 'ворона',
+    word: {
+      ru: 'ворона',
+      en: 'crow',
+    },
   },
   {
     picture: 'yozh.jpg',
-    word: 'ёж',
+    word: {
+      ru: 'ёж',
+      en: 'hedgehog',
+    },
   },
   {
     picture: 'zhuk.jpg',
-    word: 'жук',
+    word: {
+      ru: 'жук',
+      en: 'beetle',
+    },
   },
   {
     picture: 'zontik.jpg',
-    word: 'зонтик',
+    word: {
+      ru: 'зонтик',
+      en: 'umbrella',
+    },
   },
   {
     picture: 'zayac.jpg',
-    word: 'заяц',
+    word: {
+      ru: 'заяц',
+      en: 'hare',
+    },
   },
   {
     picture: 'mayak.jpg',
-    word: 'маяк',
+    word: {
+      ru: 'маяк',
+      en: 'lighthouse',
+    },
   },
   {
     picture: 'mesyac.jpg',
-    word: 'месяц',
+    word: {
+      ru: 'месяц',
+      en: 'moon',
+    },
   },
   {
     picture: 'myaso.jpg',
-    word: 'мясо',
+    word: {
+      ru: 'мясо',
+      en: 'meat',
+    },
   },
   {
     picture: 'noga.png',
-    word: 'нога',
+    word: {
+      ru: 'нога',
+      en: 'leg',
+    },
   },
   {
     picture: 'nozh.jpg',
-    word: 'нож',
+    word: {
+      ru: 'нож',
+      en: 'knife',
+    },
   },
   {
     picture: 'oblako.jpg',
-    word: 'облако',
+    word: {
+      ru: 'облако',
+      en: 'cloud',
+    },
   },
   {
     picture: 'ovca.jpg',
-    word: 'овца',
+    word: {
+      ru: 'овца',
+      en: 'sheep',
+    },
   },
   {
     picture: 'picca.jpg',
-    word: 'пицца',
+    word: {
+      ru: 'пицца',
+      en: 'pizza',
+    },
   },
   {
     picture: 'pila.jpg',
-    word: 'пила',
+    word: {
+      ru: 'пила',
+      en: 'saw',
+    },
   },
   {
     picture: 'rak.jpg',
-    word: 'рак',
+    word: {
+      ru: 'рак',
+      en: 'crayfish',
+    },
   },
   {
     picture: 'rot.jpg',
-    word: 'рот',
+    word: {
+      ru: 'рот',
+      en: 'mouth',
+    },
   },
   {
     picture: 'roza.jpg',
-    word: 'роза',
+    word: {
+      ru: 'роза',
+      en: 'rose',
+    },
   },
   {
     picture: 'shariki.png',
-    word: 'шарик',
+    word: {
+      ru: 'шарик',
+      en: 'ball',
+    },
   },
   {
     picture: 'slon.jpg',
-    word: 'слон',
+    word: {
+      ru: 'слон',
+      en: 'elephant',
+    },
   },
   {
     picture: 'sneg.jpg',
-    word: 'снег',
+    word: {
+      ru: 'снег',
+      en: 'snow',
+    },
   },
   {
     picture: 'sol.jpg',
-    word: 'соль',
+    word: {
+      ru: 'соль',
+      en: 'salt',
+    },
   },
   {
     picture: 'svyokla.jpg',
-    word: 'свёкла',
+    word: {
+      ru: 'свёкла',
+      en: 'beet',
+    },
   },
   {
     picture: 'topor.jpg',
-    word: 'топор',
+    word: {
+      ru: 'топор',
+      en: 'axe',
+    },
   },
   {
     picture: 'traktor.jpg',
-    word: 'трактор',
+    word: {
+      ru: 'трактор',
+      en: 'tractor',
+    },
   },
   {
     picture: 'utka.jpg',
-    word: 'утка',
+    word: {
+      ru: 'утка',
+      en: 'duck',
+    },
   },
   {
     picture: 'yabloko.jpg',
-    word: 'яблоко',
+    word: {
+      ru: 'яблоко',
+      en: 'apple',
+    },
   },
   {
     picture: 'yubka.jpg',
-    word: 'юбка',
+    word: {
+      ru: 'юбка',
+      en: 'skirt',
+    },
   },
   {
     picture: 'fonar.jpg',
-    word: 'фонарь',
+    word: {
+      ru: 'фонарь',
+      en: 'lamp',
+    },
   },
   {
     picture: 'fen.jpg',
-    word: 'фен',
+    word: {
+      ru: 'фен',
+      en: 'hairdryer',
+    },
   },
   {
     picture: 'cicada.jpg',
-    word: 'цикада',
+    word: {
+      ru: 'цикада',
+      en: 'cicada',
+    },
   },
   {
     picture: 'cyplenok.jpg',
-    word: 'цыплёнок',
+    word: {
+      ru: 'цыплёнок',
+      en: 'chicken',
+    },
   },
   {
     picture: 'yaschik.jpg',
-    word: 'ящик',
+    word: {
+      ru: 'ящик',
+      en: 'box',
+    },
   },
   {
     picture: 'morkov.jpg',
-    word: 'морковь',
+    word: {
+      ru: 'морковь',
+      en: 'carrot',
+    },
   },
   {
     picture: 'ogurec.jpg',
-    word: 'огурец',
+    word: {
+      ru: 'огурец',
+      en: 'cucumber',
+    },
   },
   {
     picture: 'muha.jpg',
-    word: 'муха',
+    word: {
+      ru: 'муха',
+      en: 'fly',
+    },
   },
   {
     picture: 'vertolet.jpg',
-    word: 'вертолёт',
+    word: {
+      ru: 'вертолёт',
+      en: 'helicopter',
+    },
   },
   {
     picture: 'samolet.jpg',
-    word: 'самолёт',
+    word: {
+      ru: 'самолёт',
+      en: 'plane',
+    },
   },
   {
     picture: 'parashut.jpg',
-    word: 'парашют',
+    word: {
+      ru: 'парашют',
+      en: 'parachute',
+    },
   },
   {
     picture: 'microscope.jpg',
-    word: 'микроскоп',
+    word: {
+      ru: 'микроскоп',
+      en: 'microscope',
+    },
   },
   {
     picture: 'mouse.jpg',
-    word: 'мышь',
+    word: {
+      ru: 'мышь',
+      en: 'mouse',
+    },
   },
   {
     picture: 'hamster.jpg',
-    word: 'хомяк',
+    word: {
+      ru: 'хомяк',
+      en: 'hamster',
+    },
   },
   {
     picture: 'raduga.png',
-    word: 'радуга',
+    word: {
+      ru: 'радуга',
+      en: 'rainbow',
+    },
   },
   {
     picture: 'ulitka.jpg',
-    word: 'улитка',
+    word: {
+      ru: 'улитка',
+      en: 'snail',
+    },
   },
   {
     picture: 'gusenitsa.jpg',
-    word: 'гусеница',
+    word: {
+      ru: 'гусеница',
+      en: 'caterpillar',
+    },
   },
   {
     picture: 'vilka.jpg',
-    word: 'вилка',
+    word: {
+      ru: 'вилка',
+      en: 'fork',
+    },
   },
   {
     picture: 'lozhka.jpg',
-    word: 'ложка',
+    word: {
+      ru: 'ложка',
+      en: 'spoon',
+    },
   },
   {
     picture: 'tarelka.jpg',
-    word: 'тарелка',
+    word: {
+      ru: 'тарелка',
+      en: 'plate',
+    },
   },
   {
     picture: 'sosiska.jpg',
-    word: 'сосиска',
+    word: {
+      ru: 'сосиска',
+      en: 'sausage',
+    },
   },
   {
     picture: 'kolbasa.jpg',
-    word: 'колбаса',
+    word: {
+      ru: 'колбаса',
+      en: 'sausage',
+    },
   },
   {
     picture: 'hleb.jpg',
-    word: 'хлеб',
+    word: {
+      ru: 'хлеб',
+      en: 'bread',
+    },
   },
   {
     picture: 'pomidor.jpg',
-    word: 'помидор',
+    word: {
+      ru: 'помидор',
+      en: 'tomato',
+    },
   },
   {
     picture: 'grusha.jpg',
-    word: 'груша',
+    word: {
+      ru: 'груша',
+      en: 'pear',
+    },
   },
   {
     picture: 'vinograd.jpg',
-    word: 'виноград',
+    word: {
+      ru: 'виноград',
+      en: 'grape',
+    },
   },
   {
     picture: 'stakan.jpg',
-    word: 'стакан',
+    word: {
+      ru: 'стакан',
+      en: 'glass',
+    },
   },
   {
     picture: 'ruka.jpg',
-    word: 'рука',
+    word: {
+      ru: 'рука',
+      en: 'hand',
+    },
   },
   {
     picture: 'romashka.jpg',
-    word: 'ромашка',
+    word: {
+      ru: 'ромашка',
+      en: 'chamomile',
+    },
   },
   {
     picture: 'sobaka.jpg',
-    word: 'собака',
+    word: {
+      ru: 'собака',
+      en: 'dog',
+    },
   },
 ];
