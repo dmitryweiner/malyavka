@@ -505,6 +505,111 @@ const data: WordAndPicture[] = [
       en: 'dog',
     },
   },
+  {
+    picture: 'notepad.png',
+    word: {
+      ru: 'блокнот',
+      en: 'notepad',
+    },
+  },
+  {
+    picture: 'stul.png',
+    word: {
+      ru: 'стул',
+      en: 'chair',
+    },
+  },
+  {
+    picture: 'stol.jpg',
+    word: {
+      ru: 'стол',
+      en: 'table',
+    },
+  },
+  {
+    picture: 'sock.jpg',
+    word: {
+      ru: 'носок',
+      en: 'sock',
+    },
+  },
+  {
+    picture: 'shirt.jpg',
+    word: {
+      ru: 'рубашка',
+      en: 'shirt',
+    },
+  },
+  {
+    picture: 'glove.jpg',
+    word: {
+      ru: 'перчатка',
+      en: 'glove',
+    },
+  },
+  {
+    picture: 'samokat.jpg',
+    word: {
+      ru: 'самокат',
+      en: 'scooter',
+    },
+  },
+  {
+    picture: 'bike.jpg',
+    word: {
+      ru: 'велосипед',
+      en: 'bike',
+    },
+  },
+  {
+    picture: 'belka.jpg',
+    word: {
+      ru: 'белка',
+      en: 'squirrel',
+    },
+  },
+  {
+    picture: 'hat.png',
+    word: {
+      ru: 'шапка',
+      en: 'hat',
+    },
+  },
+  {
+    picture: 'melon.jpg',
+    word: {
+      ru: 'дыня',
+      en: 'melon',
+    },
+  },
+  {
+    picture: 'spider.jpg',
+    word: {
+      ru: 'паук',
+      en: 'spider',
+    },
+  },
+  {
+    picture: 'phone.jpg',
+    word: {
+      ru: 'телефон',
+      en: 'phone',
+    },
+  },
+  {
+    picture: 'strawberry.jpg',
+    word: {
+      ru: 'клубника',
+      en: 'strawberry',
+    },
+  },
+  {
+    picture: 'raspberry.jpg',
+    word: {
+      ru: 'малина',
+      en: 'raspberry',
+    },
+  },
 ];
 
 export default data;
