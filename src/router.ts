@@ -5,7 +5,7 @@ import CountItems from '@/views/CountItems.vue';
 import SolveCalculus from '@/views/SolveCalculus.vue';
 import GuessFirstLetter from '@/views/GuessFirstLetter.vue';
 import TestPictures from '@/views/TestPictures.vue';
-import EnglishLearning from '@/views/EnglishLearning.vue';
+import TranslateToEnglish from '@/views/TranslateToEnglish.vue';
 
 Vue.use(Router);
 
@@ -30,8 +30,8 @@ export default new Router({
       component: GuessFirstLetter,
     },
     {
-      path: '/englishLearning',
-      component: EnglishLearning,
+      path: '/translateToEnglish',
+      component: TranslateToEnglish,
     },
 
     /* Служебное */

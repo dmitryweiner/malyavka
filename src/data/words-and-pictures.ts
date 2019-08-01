@@ -1,4 +1,6 @@
-export default [
+import { WordAndPicture } from '@/interfaces/words-and-picture-interface';
+
+const data: WordAndPicture[] = [
   {
     picture: 'ananas.jpg',
     word: {
@@ -227,7 +229,7 @@ export default [
     picture: 'shariki.png',
     word: {
       ru: 'шарик',
-      en: 'ball',
+      en: 'balloon',
     },
   },
   {
@@ -504,3 +506,5 @@ export default [
     },
   },
 ];
+
+export default data;

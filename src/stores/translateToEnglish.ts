@@ -7,16 +7,16 @@ import { WordAndPicture } from '@/interfaces/words-and-picture-interface';
 
 Vue.use(Vuex);
 
-export interface EnglishLearningStore {
+export interface TranslateToEnglishStore {
   isShowingAnswer: boolean;
   question: WordAndPicture;
   userAnswer: string;
   correctAnswer: string;
   answers: string[];
-  statistics: EnglishLearningStatistics;
+  statistics: TranslateToEnglishStatistics;
 }
 
-export interface EnglishLearningStatistics {
+export interface TranslateToEnglishStatistics {
   wrong: number;
   correct: number;
 }
@@ -26,7 +26,7 @@ export enum Sounds {
   CORRECT_ANSWER = require('@/assets/sounds/click.mp3'),
 }
 
-type EnglishLearningActionContext = ActionContext<EnglishLearningStore, RootStore>;
+type TranslateToEnglishActionContext = ActionContext<TranslateToEnglishStore, RootStore>;
 
 const SHOWING_ANSWER_TIMEOUT = 1500;
 
@@ -51,31 +51,31 @@ export default {
   },
   mutations: {
     setQuestion(
-      state: EnglishLearningStore,
+      state: TranslateToEnglishStore,
       question: WordAndPicture) {
       state.question = question;
     },
-    setAnswers(state: EnglishLearningStore, value: string[]) {
+    setAnswers(state: TranslateToEnglishStore, value: string[]) {
       state.answers = value;
     },
-    incWrong(state: EnglishLearningStore) {
+    incWrong(state: TranslateToEnglishStore) {
       state.statistics.wrong++;
     },
-    incCorrect(state: EnglishLearningStore) {
+    incCorrect(state: TranslateToEnglishStore) {
       state.statistics.correct++;
     },
-    setIsShowingAnswer(state: EnglishLearningStore, value: boolean) {
+    setIsShowingAnswer(state: TranslateToEnglishStore, value: boolean) {
       state.isShowingAnswer = value;
     },
-    setUserAnswer(state: EnglishLearningStore, value: string) {
+    setUserAnswer(state: TranslateToEnglishStore, value: string) {
       state.userAnswer = value;
     },
-    setCorrectAnswer(state: EnglishLearningStore, value: string) {
+    setCorrectAnswer(state: TranslateToEnglishStore, value: string) {
       state.correctAnswer = value;
     },
   },
   actions: {
-    initQuestion({state, commit, dispatch, getters}: EnglishLearningActionContext) {
+    initQuestion({state, commit, dispatch, getters}: TranslateToEnglishActionContext) {
       const index = Math.floor(Math.random() * wordsAndPictures.length);
       const question: WordAndPicture = wordsAndPictures[index];
       const answers: string[] = [
@@ -95,7 +95,7 @@ export default {
       commit('setAnswers', shuffle(answers));
     },
 
-    processAnswer({state, commit, dispatch, getters}: EnglishLearningActionContext, userAnswer: string) {
+    processAnswer({state, commit, dispatch, getters}: TranslateToEnglishActionContext, userAnswer: string) {
       commit('setUserAnswer', userAnswer);
       let isCorrect = false;
 
@@ -118,7 +118,7 @@ export default {
 
     },
 
-    getPictures({state, commit, dispatch, getters}: EnglishLearningActionContext) {
+    getPictures({state, commit, dispatch, getters}: TranslateToEnglishActionContext) {
       return wordsAndPictures;
     },
   },

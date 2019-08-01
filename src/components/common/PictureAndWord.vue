@@ -3,25 +3,25 @@
     <img src="@/assets/loader2.gif" v-show="isLoading"/>
     <img :src="iconUrl" v-on:load="onLoaded" v-show="!isLoading"/>
     <div class="word">
-      <span>{{this.question.word.ru}}</span>
+      <span>{{this.question}}</span>
     </div>
   </div>
 </template>
 
 <script lang="ts">
   import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-  import { WordAndPicture } from 'src/interfaces/words-and-picture-interface';
 
   @Component
   export default class PictureAndWord extends Vue {
-    @Prop() public question!: WordAndPicture;
+    @Prop() public question!: string;
+    @Prop() public picture!: string;
     @Prop() public isShowingAnswer!: boolean;
     private isLoading: boolean = false;
     private timeoutId?: number;
 
     get iconUrl() {
-      if (this.question.picture) {
-        return require(`@/assets/pictures/${this.question.picture}`);
+      if (this.picture) {
+        return require(`@/assets/pictures/${this.picture}`);
       }
     }
 
@@ -60,12 +60,12 @@
 
   .word {
     width: 100%;
-    bottom: 15px;
+    bottom: 5px;
     position: absolute;
   }
 
   .word span {
-    font-size: 40px;
+    font-size: 30px;
     background-color: white;
     padding: 5px;
     border-radius: 5px;
