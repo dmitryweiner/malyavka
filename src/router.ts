@@ -6,6 +6,7 @@ import SolveCalculus from '@/views/SolveCalculus.vue';
 import GuessFirstLetter from '@/views/GuessFirstLetter.vue';
 import TestPictures from '@/views/TestPictures.vue';
 import TranslateToEnglish from '@/views/TranslateToEnglish.vue';
+import TranslateFromEnglish from '@/views/TranslateFromEnglish.vue';
 
 Vue.use(Router);
 
@@ -32,6 +33,10 @@ export default new Router({
     {
       path: '/translateToEnglish',
       component: TranslateToEnglish,
+    },
+    {
+      path: '/translateFromEnglish',
+      component: TranslateFromEnglish,
     },
 
     /* Служебное */

@@ -5,6 +5,7 @@
     <h3><router-link to="/solveCalculus">Реши пример</router-link></h3>
     <h3><router-link to="/guessFirstLetter">Угадай букву</router-link></h3>
     <h3><router-link to="/translateToEnglish">Переведи на английский</router-link></h3>
+    <h3><router-link to="/translateFromEnglish">Переведи c английского</router-link></h3>
   </div>
 </template>
 
