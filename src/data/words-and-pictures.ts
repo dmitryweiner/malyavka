@@ -74,7 +74,7 @@ const data: WordAndPicture[] = [
   {
     picture: 'kon.jpg',
     word: {
-      ru: 'конь',
+      ru: 'лошадь',
       en: 'horse',
     },
   },
@@ -149,9 +149,9 @@ const data: WordAndPicture[] = [
     },
   },
   {
-    picture: 'mesyac.jpg',
+    picture: 'moon.jpg',
     word: {
-      ru: 'месяц',
+      ru: 'луна',
       en: 'moon',
     },
   },
