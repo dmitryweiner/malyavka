@@ -3,7 +3,7 @@
     <h3>Переведи c английского</h3>
     <div class="wrapper">
       <div class="row">
-        <PictureAndWord
+        <PictureAndWordTogglable
           :question="$store.state.translateFromEnglish.question.word.en"
           :picture="$store.state.translateFromEnglish.question.picture"
           :isShowingAnswer="$store.state.translateFromEnglish.isShowingAnswer"
@@ -28,13 +28,13 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import PictureAndWord from '@/components/common/PictureAndWord.vue';
+import PictureAndWordTogglable from '@/components/TranslateFromEnglish/PictureAndWordTogglable.vue';
 import AnswersTwoRows from '@/components/common/AnswersTwoRows.vue';
 import Statistics from '@/components/common/Statistics.vue';
 
 @Component({
   components: {
-    PictureAndWord,
+    PictureAndWordTogglable,
     AnswersTwoRows,
     Statistics,
   },

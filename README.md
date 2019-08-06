@@ -1,29 +1,25 @@
-# malyavka
+# malyavka -- проект для обучения мелких особей
+Выложено тут http://malyavka.dweiner.ru/ 
 
-## Project setup
-```
-npm install
-```
+## Технологии
+* Node.js
+* Vue.js
 
-### Compiles and hot-reloads for development
+## Установка локально
 ```
+    npm install
     npm run serve
 ```
 
-### Compiles and minifies for production
+## Установка на сервере
 ```
 npm run build
 ```
 
-### Run your tests
+## Пережатие картинок
 ```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
+ mogrify -geometry 'x600>' -quality 95 *
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Полезные ссылки 
+ https://developers.google.com/web/fundamentals/native-hardware/fullscreen/

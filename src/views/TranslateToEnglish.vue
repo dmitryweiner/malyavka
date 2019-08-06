@@ -28,7 +28,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import PictureAndWord from '@/components/common/PictureAndWord.vue';
+import PictureAndWord from '@/components/TranslateToEnglish/PictureAndWord.vue';
 import AnswersTwoRows from '@/components/common/AnswersTwoRows.vue';
 import Statistics from '@/components/common/Statistics.vue';
 
