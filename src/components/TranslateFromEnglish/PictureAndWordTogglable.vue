@@ -29,6 +29,7 @@
     @Watch('iconUrl')
     private onIconUrlChanged() {
       this.timeoutId = setTimeout(() => this.isLoading = true, 250);
+      this.isAnswerShowed = false;
     }
 
     private onLoaded() {
