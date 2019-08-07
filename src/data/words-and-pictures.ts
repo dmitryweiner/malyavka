@@ -610,6 +610,181 @@ const data: WordAndPicture[] = [
       en: 'raspberry',
     },
   },
+  {
+    picture: 'dyatel.jpg',
+    word: {
+      ru: 'дятел',
+      en: 'woodpecker',
+    },
+  },
+  {
+    picture: 'hen.jpg',
+    word: {
+      ru: 'курица',
+      en: 'hen',
+    },
+  },
+  {
+    picture: 'cock.jpg',
+    word: {
+      ru: 'петух',
+      en: 'cock',
+    },
+  },
+  {
+    picture: 'owl.jpg',
+    word: {
+      ru: 'сова',
+      en: 'owl',
+    },
+  },
+  {
+    picture: 'robot.jpg',
+    word: {
+      ru: 'робот',
+      en: 'robot',
+    },
+  },
+  {
+    picture: 'tail.jpg',
+    word: {
+      ru: 'хвост',
+      en: 'tail',
+    },
+  },
+  {
+    picture: 'kettle.jpg',
+    word: {
+      ru: 'чайник',
+      en: 'kettle',
+    },
+  },
+  {
+    picture: 'fish.jpg',
+    word: {
+      ru: 'рыба',
+      en: 'fish',
+    },
+  },
+  {
+    picture: 'grib.jpg',
+    word: {
+      ru: 'гриб',
+      en: 'mushroom',
+    },
+  },
+  {
+    picture: 'radish.jpg',
+    word: {
+      ru: 'редиска',
+      en: 'radish',
+    },
+  },
+  {
+    picture: 'cabbage.jpg',
+    word: {
+      ru: 'капуста',
+      en: 'cabbage',
+    },
+  },
+  {
+    picture: 'bear.jpg',
+    word: {
+      ru: 'медведь',
+      en: 'bear',
+    },
+  },
+  {
+    picture: 'fox.jpg',
+    word: {
+      ru: 'лиса',
+      en: 'fox',
+    },
+  },
+  {
+    picture: 'leaf.png',
+    word: {
+      ru: 'лист',
+      en: 'leaf',
+    },
+  },
+  {
+    picture: 'book.jpg',
+    word: {
+      ru: 'книга',
+      en: 'book',
+    },
+  },
+  {
+    picture: 'snake.jpg',
+    word: {
+      ru: 'змея',
+      en: 'snake',
+    },
+  },
+  {
+    picture: 'frog.jpg',
+    word: {
+      ru: 'лягушка',
+      en: 'frog',
+    },
+  },
+  {
+    picture: 'dragonfly.jpg',
+    word: {
+      ru: 'стрекоза',
+      en: 'dragonfly',
+    },
+  },
+  {
+    picture: 'dragon.jpg',
+    word: {
+      ru: 'дракон',
+      en: 'dragon',
+    },
+  },
+  {
+    picture: 'grasshopper.jpg',
+    word: {
+      ru: 'кузнечик',
+      en: 'grasshopper',
+    },
+  },
+  {
+    picture: 'goat.jpg',
+    word: {
+      ru: 'коза',
+      en: 'goat',
+    },
+  },
+  {
+    picture: 'hammer.jpg',
+    word: {
+      ru: 'молоток',
+      en: 'hammer',
+    },
+  },
+  {
+    picture: 'orange.jpg',
+    word: {
+      ru: 'апельсин',
+      en: 'orange',
+    },
+  },
+  {
+    picture: 'lemon.jpg',
+    word: {
+      ru: 'лимон',
+      en: 'lemon',
+    },
+  },
+  {
+    picture: 'refrigerator.jpg',
+    word: {
+      ru: 'холодильник',
+      en: 'refrigerator',
+    },
+  },
 ];
 
 export default data;
