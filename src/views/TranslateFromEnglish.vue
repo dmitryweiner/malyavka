@@ -1,5 +1,5 @@
 <template>
-  <div class="translate-to-english">
+  <div class="translate-from-english">
     <h3>Переведи c английского</h3>
     <div class="wrapper">
       <div class="row">
@@ -55,18 +55,18 @@ export default class TranslateFromEnglish extends Vue {
 </script>
 
 <style scoped>
-  .translate-to-english {
+  .translate-from-english {
     height: calc(100% - 90px);
   }
 
-  translate-to-english .wrapper {
+  .translate-from-english .wrapper {
     height: 100%;
     min-height: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  .translate-to-english .wrapper .row {
+  .translate-from-english .wrapper .row {
     flex: 1;
     display: flex;
     justify-content: center;

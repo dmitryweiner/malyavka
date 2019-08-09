@@ -59,7 +59,7 @@ export default class TranslateToEnglish extends Vue {
     height: calc(100% - 90px);
   }
 
-  translate-to-english .wrapper {
+  .translate-to-english .wrapper {
     height: 100%;
     min-height: 100%;
     display: flex;

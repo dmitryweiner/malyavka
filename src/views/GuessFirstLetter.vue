@@ -58,7 +58,7 @@ export default class GuessFirstLetter extends Vue {
     height: calc(100% - 90px);
   }
 
-  guess-first-letter .wrapper {
+  .guess-first-letter .wrapper {
     height: 100%;
     min-height: 100%;
     display: flex;
