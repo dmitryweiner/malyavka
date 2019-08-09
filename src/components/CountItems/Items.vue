@@ -1,9 +1,6 @@
 <template>
   <div class="items">
     <template v-for="i in itemsCount"><span>{{symbol}}</span></template>
-    <div>
-      {{isShowingAnswer ? itemsCount : '&nbsp;'}}
-    </div>
   </div>
 </template>
 
@@ -30,7 +27,7 @@
   @media only screen and (max-width: 768px) {
     .items {
       margin-top: 10px;
-      font-size: 30px;
+      font-size: 40px;
     }
   }
 
