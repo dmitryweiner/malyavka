@@ -21,7 +21,9 @@
     @Prop() public correctAnswer!: number;
 
     get isSignAdd(): boolean {
-      return this.sign === Signs.ADD;
+      // Here we can't write Signs.ADD due to "TypeError: rawModule is undefined" error
+      // @see https://github.com/vuejs/vue-loader/issues/1281
+      return this.sign === '+';
     }
 
   }

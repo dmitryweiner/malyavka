@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Vuex, { ActionContext } from 'vuex';
 import { shuffle } from '@/utils/utils.ts';
 import wordsAndPictures from '@/data/words-and-pictures.ts';
-import { RootStore } from '@/stores/store';
+import { RootStore, SHOWING_CORRECT_ANSWER_TIMEOUT, SHOWING_WRONG_ANSWER_TIMEOUT } from '@/stores/store';
 import { WordAndPicture } from '@/interfaces/words-and-picture-interface';
 
 Vue.use(Vuex);
@@ -114,7 +114,7 @@ export default {
       setTimeout(() => {
         commit('setIsShowingAnswer', false);
         dispatch('initQuestion');
-      }, SHOWING_ANSWER_TIMEOUT);
+      }, isCorrect ? SHOWING_CORRECT_ANSWER_TIMEOUT : SHOWING_WRONG_ANSWER_TIMEOUT);
     },
   },
 };

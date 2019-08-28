@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex, {ActionContext} from 'vuex';
 import { generateRandom, shuffle } from '@/utils/utils.ts';
-import {RootStore} from '@/stores/store';
+import { RootStore, SHOWING_CORRECT_ANSWER_TIMEOUT, SHOWING_WRONG_ANSWER_TIMEOUT } from '@/stores/store.ts';
 
 Vue.use(Vuex);
 
@@ -131,7 +131,7 @@ export default {
       setTimeout(() => {
         commit('setIsShowingAnswer', false);
         dispatch('initQuestion');
-      }, SHOWING_ANSWER_TIMEOUT);
+      }, isCorrect ? SHOWING_CORRECT_ANSWER_TIMEOUT : SHOWING_WRONG_ANSWER_TIMEOUT);
     },
   },
 };

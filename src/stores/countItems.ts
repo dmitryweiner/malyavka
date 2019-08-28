@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex, {ActionContext} from 'vuex';
 import { generateRandom, shuffle } from '@/utils/utils.ts';
-import {RootStore} from '@/stores/store';
+import { RootStore, SHOWING_CORRECT_ANSWER_TIMEOUT, SHOWING_WRONG_ANSWER_TIMEOUT } from '@/stores/store';
 
 Vue.use(Vuex);
 
@@ -19,8 +19,6 @@ export interface CountItemsStatistics {
   correct: number;
 }
 
-const MAX_ITEMS = 8;
-
 export enum Sounds {
   WRONG_ANSWER = require('@/assets/sounds/alien.mp3'),
   CORRECT_ANSWER = require('@/assets/sounds/click.mp3'),
@@ -28,7 +26,7 @@ export enum Sounds {
 
 type CountItemsActionContext = ActionContext<CountItemsStore, RootStore>;
 
-const SHOWING_ANSWER_TIMEOUT = 1500;
+const MAX_ITEMS = 8;
 
 const getRandomSymbol = (): string => {
   const emoji = [
@@ -104,10 +102,13 @@ export default {
     },
 
     processAnswer({state, commit, dispatch, getters}: CountItemsActionContext, userAnswer: number) {
+      let isCorrect = false;
+
       commit('setUserAnswer', userAnswer);
       if (userAnswer === state.question) {
         commit('incCorrect');
         dispatch('playSound', Sounds.CORRECT_ANSWER, {root: true});
+        isCorrect = true;
       } else {
         commit('incWrong');
         dispatch('playSound', Sounds.WRONG_ANSWER, {root: true});
@@ -116,7 +117,7 @@ export default {
       setTimeout(() => {
         commit('setIsShowingAnswer', false);
         dispatch('initQuestion');
-      }, SHOWING_ANSWER_TIMEOUT);
+      }, isCorrect ? SHOWING_CORRECT_ANSWER_TIMEOUT : SHOWING_WRONG_ANSWER_TIMEOUT);
     },
   },
 };
