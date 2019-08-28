@@ -11,7 +11,7 @@
   export default class Items extends Vue {
     @Prop() public itemsCount!: number;
     @Prop() public isShowingAnswer!: boolean;
-    @Prop() public displayedSymbols!: string;
+    @Prop() public displayedSymbols!: string[];
   }
 </script>
 
