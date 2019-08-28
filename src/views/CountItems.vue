@@ -6,7 +6,7 @@
         <Items
           :isShowingAnswer="$store.state.countItems.isShowingAnswer"
           :itemsCount="$store.state.countItems.question"
-          :symbol="$store.state.countItems.randomSymbol"/>
+          :displayedSymbols="$store.state.countItems.displayedSymbols"/>
       </div>
       <div class="row">
         <Answers

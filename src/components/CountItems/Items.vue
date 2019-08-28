@@ -1,6 +1,6 @@
 <template>
   <div class="items">
-    <template v-for="i in itemsCount"><span>{{symbol}}</span></template>
+    <template v-for="i in itemsCount"><span>{{ displayedSymbols[i - 1] }}</span></template>
   </div>
 </template>
 
@@ -11,7 +11,7 @@
   export default class Items extends Vue {
     @Prop() public itemsCount!: number;
     @Prop() public isShowingAnswer!: boolean;
-    @Prop() public symbol!: string;
+    @Prop() public displayedSymbols!: string;
   }
 </script>
 

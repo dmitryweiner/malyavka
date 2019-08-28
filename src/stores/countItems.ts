@@ -7,7 +7,7 @@ Vue.use(Vuex);
 
 export interface CountItemsStore {
   isShowingAnswer: boolean;
-  randomSymbol: string;
+  displayedSymbols: string[];
   userAnswer: number;
   question: number;
   answers: number[];
@@ -28,7 +28,8 @@ type CountItemsActionContext = ActionContext<CountItemsStore, RootStore>;
 
 const MAX_ITEMS = 8;
 
-const getRandomSymbol = (): string => {
+const getRandomSymbols = (n: number = 1): string[] => {
+  let result = [];
   const emoji = [
     '\u{1F388}',
     '\u{1F382}',
@@ -47,8 +48,11 @@ const getRandomSymbol = (): string => {
     '\u{1F603}',
   ];
 
-  const index = Math.floor((Math.sin(Math.random() * emoji.length) + 1) / 2 * emoji.length);
-  return emoji[index];
+  for (let i = 0; i < n; i++) {
+    const index = Math.floor((Math.sin(Math.random() * emoji.length) + 1) / 2 * emoji.length);
+    result.push(emoji[index]);
+  }
+  return result;
 };
 
 export default {
@@ -62,7 +66,7 @@ export default {
       wrong: 0,
       correct: 0,
     },
-    randomSymbol: '',
+    displayedSymbols: '',
   },
   mutations: {
     setQuestion(state: CountItemsStore, value: number) {
@@ -83,8 +87,8 @@ export default {
     setUserAnswer(state: CountItemsStore, value: number) {
       state.userAnswer = value;
     },
-    setRandomSymbol(state: CountItemsStore, value: string) {
-      state.randomSymbol = value;
+    setDisplayedSymbols(state: CountItemsStore, value: string[]) {
+      state.displayedSymbols = value;
     },
   },
   actions: {
@@ -98,7 +102,7 @@ export default {
       answers.push(generateRandom(1, MAX_ITEMS, answers));
       commit('setQuestion', question);
       commit('setAnswers', shuffle(answers));
-      commit('setRandomSymbol', getRandomSymbol());
+      commit('setDisplayedSymbols', getRandomSymbols(question));
     },
 
     processAnswer({state, commit, dispatch, getters}: CountItemsActionContext, userAnswer: number) {
